@@ -1,0 +1,48 @@
+        <div class="editor-container">
+            <div class="editor-header">
+                <h2>📝 Album bearbeiten</h2>
+                
+                <div class="editor-actions">
+                    <button class="btn btn-save" onclick="saveAlbum()">💾 Speichern</button>
+                    <button class="btn btn-view" onclick="window.location.href='MB Album ansehen.html'">👁️ Album ansehen</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Album Titel</label>
+                    <input type="text" id="albumTitle" placeholder="z.B. Unsere Erinnerungen">
+                </div>
+
+                <div class="form-group">
+                    <label>🎨 Farben anpassen</label>
+                    <div class="color-grid">
+                        <div class="color-input-group">
+                            <label>Cover Hintergrund</label>
+                            <input type="color" id="coverBg" value="#8B4513">
+                        </div>
+                        <div class="color-input-group">
+                            <label>Cover Rahmen</label>
+                            <input type="color" id="coverBorder" value="#654321">
+                        </div>
+                        <div class="color-input-group">
+                            <label>Seiten Hintergrund</label>
+                            <input type="color" id="pageBg" value="#fdfbf7">
+                        </div>
+                        <div class="color-input-group">
+                            <label>Seiten Rahmen</label>
+                            <input type="color" id="pageBorder" value="#8B4513">
+                        </div>
+                        <div class="color-input-group">
+                            <label>Text Farbe</label>
+                            <input type="color" id="textColor" value="#4B3621">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pages-grid" id="pagesContainer">
+                <div class="page-card add-page-card" onclick="addPage()">
+                    <div class="add-page-icon">+</div>
+                    <h3>Neue Seite hinzufügen</h3>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,333 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    display: flex;            /* column layout so footer can stick to bottom */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+    /* --- Header / branding --- */
+    header {
+        background-color: #D0BFFF;
+        color: #ffffff;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    h1 {
+        margin: 0;
+        font-family: 'Kaushan Script', cursive;
+        font-size: 3rem;
+    }
+
+    .title-with-icon {
+        background-image: url('favicon_io/favicon-32x32.png');
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 32px 32px;
+        padding-left: 40px; /* space for the inline logo */
+    }
+
+
+    /* --- Navigation --- */
+    nav {
+        background-color: #D0BFFF;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.125rem; /* large */
+    }
+
+    /* Global link colors: make every link white by default and give a subtle hover */
+    a, a:visited {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+a:hover, a:focus {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #846358;
+}
+
+.main-startseite p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #846358;
+}
+
+h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    text-align: left;
+    color: #846358;
+    padding-left: 1rem;
+
+}
+/* Allow main to grow so footer sits at bottom on short pages */
+main { flex: 1 0 auto; }
+
+h3 div  {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    text-align: left;
+    color: #846358;
+    padding: 1rem;
+    border-left: #846358 4px solid;
+}
+h4 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.15rem;
+    text-align: left;
+    color: #846358;
+}
+.main-anleitung p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    text-align: left;
+    color: #846358;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin: 0;
+}
+ h4{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    text-align: left;
+    color: #846358;
+    padding: 1rem;
+    background-color: rgb(220, 246, 255);
+    margin: 0;
+}
+/*--Footer--*/
+footer {
+    text-align: center;
+    padding: 0.6rem 0;
+    margin-top: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-footer { background-color: #D0BFFF !important; }
+.site-footer, .site-footer p { color: #ffffff !important; }
+
+/*--Vines--*/
+.img-vines-left,
+.img-vines-right {
+    position: absolute;
+    transform: translateY(-50%);
+    width: 140px;           
+    height: auto;
+    pointer-events: none;    /* don't block clicks */
+    z-index: 0;              /* keep behind content */
+}
+
+.img-vines-left {
+    left: 120px;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: 0 50%; /* pivot at left center */
+    width:400px;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.img-vines-right {
+    right: 120px;          
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: 100% 50%; /* pivot at right center */
+    width:400px;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+}
+@media (max-width:700px) {
+  .img-vines-left {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    width: 350px;
+    transform: rotate(90deg);
+    transform-origin: 0 0; /* pivot at top left */
+  }
+
+  .img-vines-right {
+    position: absolute;
+    bottom: 35%;
+    right: 8px;
+    width: 350px;
+    transform: rotate(-90deg);
+    transform-origin: 100% 100%; /* pivot at bottom right corner */
+  }
+}
+
+/* ensure page content sits above the fixed vines */
+main, header, nav, footer {
+  position: relative; 
+  z-index: 2;
+}
+
+/*--Navagation--*/
+
+/* Basic navbar layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #846358;
+  padding: 1rem;
+  color: white;
+}
+
+/* Desktop nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a{
+  color: #fff; /* keep links readable on purple */
+  text-decoration: none;
+}
+
+@media (max-width:300px){
+
+  .nav-links {
+    position: static;
+    top: auto;
+    right: auto;
+    background: transparent;
+    flex-direction: column;
+    width: auto;
+    display: flex;
+    padding: 0.5rem 0;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .title-with-icon {
+      background-position: center center;
+      padding-left: 0;
+}
+
+}
+
+/*--Features--*/
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #846358;
+    line-height: 1.6;
+}
+/* tips und tricks*/
+.tip{
+    border-left: 4px solid #fff675;
+    background-color: rgb(220, 246, 255);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    color: #846358;
+}
+/*
+main h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    text-align: left;
+    color: #846358;
+    padding-left: 1rem;
+    margin-left: 6rem;
+}
+*/
+.img-vines-left{
+    top: -3%;
+}
+/*
+.img-vines-right{
+    bottom: 45%;
+}
+*/
+/*--Anleitung--*/
+.main-anleitung{
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+.decorative-image {
+    display: block;
+    margin: 1rem auto;
+    max-width:100px;
+    height: auto;
+}
+/*--Editor--*/
+.editor-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    background-color:rgb(255, 255, 255);
+}
+.editor-inner {
+    background-color: rgb(220, 246, 255);
+    border-radius:15px;
+    padding: 1rem;
+    min-height: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #846358;
+}
+.editor-actions{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    size: 5rem;
+}
+.btn{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: inline-flex;
+}
